@@ -1,19 +1,55 @@
+#intro{
+	position: relative;
+	border: 1px solid blue;
+	height:675px;
+	background-image: url('wof.bmp');
+	background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: center top;
+    background-size: 100% auto;
+}
+
+#start_game button{
+	border: 1px solid blue;
+	display:block;
+	height:50px;
+	width: 100px;
+	position: absolute;
+    bottom: 20px;
+    left:50%;
+}
+
+#game{
+	display: none;
+}
+
+/*#wrapper{
+	width: 90%;
+	margin: 50px auto;
+}
+*/
+
+
 
 #tile_board{
-	margin:20px 0px;
+	/*margin:20px 0px;*/
 	border: 1px solid red;
-	width: 100%;
-	height:170px;
+	/*width: 100%;*/
+	/*height:170px;*/
+}
+
+body{
+	background-color: gray;
 }
 
 .tile{
 	border: 1px solid red;
 	display:inline-block;
-	margin: 10px;
-	padding: 10px;
+	margin: 5px;
+	padding: 5px;
 	/*background-image: url("http://placehold.it/100x150");*/
-	height:150px;
-	width: 100px;
+	height:120px;
+	width: 80px;
 	background-color: rgb(234,234,234);
 	/*z-index: -1;*/
 	/*position:static;*/
@@ -22,11 +58,11 @@
 .space{
 	/*border: 1px solid red;*/
 	display:inline-block;
-	margin: 10px;
-	padding: 10px;
+	margin: 5px;
+	padding: 5px;
 	/*background-image: url("http://placehold.it/100x150");*/
-	height:150px;
-	width: 100px;
+	height:120px;
+	width: 80px;
 	/*background-color: rgb(200,200,200);*/*/
 }
 .tile h2{
@@ -37,11 +73,19 @@
 	/*display: none;*/
 }
 
-.board{
+#modal_container{
+	/*top:5%;*/
+	/*right:50%;*/
+	/*bottom: 100px;*/
+	/*outline: none;*/
+
+}
+
+/*.board{
 	border: 1px solid red;
 	height: 200px;
 	background-color: grey;
 
 }
-
+*/
 

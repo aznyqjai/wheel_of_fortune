@@ -5,29 +5,92 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="app.js"></script>
 </head>
+
+
 <body>
+
 	<div id="wrapper">
-		<div id="tile_board" class="board">
-			<!-- <div id="title1" class="tile"><h2>A</h2></div> -->
-			<!-- <div class="tile"><h1>B</h1></div> -->
-			<!-- <div class="tile"><h1>C</h1></div> -->
+
+		<div id="intro">
+
+			<div class="container">
+			<!-- <h2>Game Rules</h2> -->
+				<!-- Trigger the modal with a button -->
+				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#introModal">Game Rules</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="introModal" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">WoF Rules</h4>
+							</div>
+							<div class="modal-body">
+								<p>You've got 5 tries to get the puzzle solved</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div id="start_game">
+			<button class="btn btn-success" onclick="start_game()"> Start</button>
+			</div>
 		</div>
-		<div id="tile_board2" class="board">
-<!-- 			<div class="tile"><h1>A</h1></div>
-			<div class="tile"><h1>B</h1></div>
-			<div class="tile"><h1>C</h1></div>
-			<div class="tile"><h1>D</h1></div>
-			<div class="tile"><h1>E</h1></div>
-			<div class="tile"><h1>F</h1></div> -->
+
+		<div id="game">
+			<div id="tile_board">
+			</div>
+
+			<div id="hint" class="well">
+			<h2> Hint:  Home Stuff</h2>
+			</div>
+
+			<div id="input_field">
+				<input id="user_input" type="text"> Enter Character
+				<button id="enter" onclick="dosearch()">Submit</button>
+			</div>
+
+			<div id="controller">
+				<button id="solve_button" onclick="$('#myModal').modal();">SOLVE PUZZLE</button>
+				<button id="spinner">Spin Wheel</button>
+				<button id="buy_vowel">Buy Vowel</button>
+				<button id="new_puzzle" onclick="new_puzzle()">New Puzzle</button>
+				<div id="score">
+				<h4>Scores:<span id="score_board">0</span></h4>
+				</div>
+			</div>
+
+			<div id="modal_container" class="container">
+			  <div class="modal fade" id="myModal" role="dialog">
+			    <div class="modal-dialog modal-sm">
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <h4 class="modal-title">Time to solve!</h4>
+			        </div>
+			        <div class="modal-body">
+			          <input id="solve" type="text">
+			        </div>
+			        <div class="modal-footer">
+			        	<div id="solvetext"> </div>
+			          	<button type="button" class="btn btn-default" onclick="solve()">Solve</button>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 		</div>
 	</div>
 
-	<div id="guess">
-	<input id="user_input" type="text"> Enter Character
-	<button id="enter" onclick="dosearch()">Submit</button>
-	</div>
 </body>
 </html>
 
