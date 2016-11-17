@@ -61,7 +61,7 @@
 		
 
 			
-				<button id="solve_button" onclick="$('#myModal').modal();">SOLVE PUZZLE</button>
+				<button id="solve_button" onclick="$('#myModal').modal()">SOLVE PUZZLE</button>
 				<button id="spinner">Spin Wheel</button>
 				<button id="buy_vowel">Buy Vowel</button>
 				<button id="new_puzzle" onclick="puzzle.draw_board(phrase())">New Puzzle</button>
@@ -90,22 +90,28 @@
 			    </div>
 			  </div>
 			</div>
-			<div id="modal_container" class="container">
+
+			<div id="modal_wrong" class="container">
+			<!--<div id="modal_container" class="container">-->
 			  <div class="modal fade" id="wrong_modal" role="dialog">
 			    <div class="modal-dialog modal-sm">
 			      <div class="modal-content">
 			        <div class="modal-header">
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
-			          <h4 class="modal-title">You're Damn Wrong!</h4>
+			          <h4 class="modal-title">You're damn wrong!</h4>
 			        </div>
-			        <div class="modal-body">
-			        </div>
-			        <div class="modal-footer">
-			        </div>
+			        <!-- <div class="modal-body">
+			          <input id="solve" type="text">
+			        </div> -->
+			        <!-- <div class="modal-footer">
+			        	<div id="solvetext"> </div>
+			          	<button type="button" class="btn btn-default" onclick="puzzle.solve()">Solve</button>
+			        </div> -->
 			      </div>
 			    </div>
 			  </div>
 			</div>
+			
 		</div>
 	</div>
 

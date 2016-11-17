@@ -96,19 +96,27 @@ function Puzzle(){
 			}
 			console.log("great");
 		}else{
-			$("#wrong_modal").show();
+			//$("#wrong_modal").show();
+			$("#myModal").modal("hide");
+			$("#wrong_modal").modal("show");
+			
+			//$("#modal-title").show();
 			console.log("wrong");
+
 		}
 	}
 }
 
+function show(){
+	myModal
+}
 
 
 function start_game(){
 	$("#intro").fadeOut();
 	$("#game").fadeIn(2000);
 	puzzle.draw_board();
-	$("#wrong_modal").hide();
+	// $("#wrong_modal").hide();
 }
 
 var puzzle = new Puzzle();

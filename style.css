@@ -101,7 +101,8 @@ body{
 }
 
 /*#wrong_modal {
-	display: none;
+	display: show;
+	margin-left: 100px;
 }*/
 
 /*.board{
@@ -110,5 +111,5 @@ body{
 	background-color: grey;
 
 }
-*/
+
 
