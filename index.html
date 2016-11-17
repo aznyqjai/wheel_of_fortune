@@ -15,15 +15,15 @@
 	<div id="wrapper">
 
 		<div id="intro">
-
-			<div class="container">
+			<img src="wof.bmp">
+			<div id="rules_button" class="container">
 			<!-- <h2>Game Rules</h2> -->
 				<!-- Trigger the modal with a button -->
 				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#introModal">Game Rules</button>
 
 				<!-- Modal -->
 				<div class="modal fade" id="introModal" role="dialog">
-					<div class="modal-dialog modal-lg">
+					<div class="modal-dialog modal-sm">
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -31,6 +31,7 @@
 							</div>
 							<div class="modal-body">
 								<p>You've got 5 tries to get the puzzle solved</p>
+								<p>Try to score as much as much as you can</p>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -46,7 +47,7 @@
 			</div>
 		</div>
 
-		<div id="game">
+		<div id="game" >
 			<div id="tile_board">
 			</div>
 
@@ -54,18 +55,19 @@
 			<h2> Hint:  Home Stuff</h2>
 			</div>
 
-			<div id="input_field">
-				<input id="user_input" type="text"> Enter Character
-				<button id="enter" onclick="dosearch()">Submit</button>
-			</div>
-
 			<div id="controller">
+				<input id="user_input" type="text"> Enter Character
+				<button id="enter" onclick="puzzle.search()">Guess</button>
+		
+
+			
 				<button id="solve_button" onclick="$('#myModal').modal();">SOLVE PUZZLE</button>
 				<button id="spinner">Spin Wheel</button>
 				<button id="buy_vowel">Buy Vowel</button>
-				<button id="new_puzzle" onclick="new_puzzle()">New Puzzle</button>
-				<div id="score">
+				<button id="new_puzzle" onclick="puzzle.draw_board(phrase())">New Puzzle</button>
+				<div id="stats">
 				<h4>Scores:<span id="score_board">0</span></h4>
+				<h4>Letters Played: <span id="letters_played"></span></h4>
 				</div>
 			</div>
 
@@ -82,7 +84,23 @@
 			        </div>
 			        <div class="modal-footer">
 			        	<div id="solvetext"> </div>
-			          	<button type="button" class="btn btn-default" onclick="solve()">Solve</button>
+			          	<button type="button" class="btn btn-default" onclick="puzzle.solve()">Solve</button>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<div id="modal_container" class="container">
+			  <div class="modal fade" id="wrong_modal" role="dialog">
+			    <div class="modal-dialog modal-sm">
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <h4 class="modal-title">You're Damn Wrong!</h4>
+			        </div>
+			        <div class="modal-body">
+			        </div>
+			        <div class="modal-footer">
 			        </div>
 			      </div>
 			    </div>

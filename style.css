@@ -1,12 +1,27 @@
 #intro{
 	position: relative;
 	border: 1px solid blue;
-	height:675px;
-	background-image: url('wof.bmp');
+	height:100%x;
+	/*background-image: url('wof.bmp');*/
 	background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position: center top;
     background-size: 100% auto;
+    /*display: none;*/
+}
+
+#intro img{
+	width: 100%;
+}
+
+#rules_button{
+	/*border: 1px solid blue;*/
+	display:block;
+	height:50px;
+	width: 100px;
+	position: absolute;
+    top: 20px;
+    left:50px;
 }
 
 #start_game button{
@@ -20,7 +35,7 @@
 }
 
 #game{
-	display: none;
+	/*display: none;*/
 }
 
 /*#wrapper{
@@ -30,12 +45,16 @@
 */
 
 
+#controller{
+	margin:0px auto;
+}
 
 #tile_board{
 	/*margin:20px 0px;*/
 	border: 1px solid red;
 	/*width: 100%;*/
 	/*height:170px;*/
+	border-radius: 15px;
 }
 
 body{
@@ -63,7 +82,7 @@ body{
 	/*background-image: url("http://placehold.it/100x150");*/
 	height:120px;
 	width: 80px;
-	/*background-color: rgb(200,200,200);*/*/
+	/*background-color: rgb(234,234,234);*/
 }
 .tile h2{
 	text-align: center;
@@ -80,6 +99,10 @@ body{
 	/*outline: none;*/
 
 }
+
+/*#wrong_modal {
+	display: none;
+}*/
 
 /*.board{
 	border: 1px solid red;
