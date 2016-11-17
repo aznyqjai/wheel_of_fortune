@@ -92,33 +92,34 @@ function Puzzle(){
 	this.solve=function(){
 		if (($("#solve").val().toUpperCase())==this.phrase){
 			for (var i=0; i<this.phrase.length; i++){
-			$("#tile"+i).replaceWith('<div id="tile'+i+'" class="tile"><h2>'+this.phrase[i]+'</h2></div>');	
+				$("#tile"+i).replaceWith('<div id="tile'+i+'" class="tile"><h2>'+this.phrase[i]+'</h2></div>');	
 			}
+			$("#solve_puzzle_Modal").modal("hide");
+			$("#right_modal").modal("show");
+			$("#letters_played").html("");
 			console.log("great");
-		}else{
-			//$("#wrong_modal").show();
-			$("#myModal").modal("hide");
+		}
+		else{
+			$("#solve_puzzle_Modal").modal("hide");
 			$("#wrong_modal").modal("show");
-			
-			//$("#modal-title").show();
 			console.log("wrong");
-
 		}
 	}
-}
-
-function show(){
-	myModal
-}
 
 
-function start_game(){
-	$("#intro").fadeOut();
-	$("#game").fadeIn(2000);
-	puzzle.draw_board();
+	this.display=function(){
+		$('#solve_puzzle_Modal').modal("show")
+	}
+
+
+	this.start_game=function(){
+		$("#intro").fadeOut();
+		$("#game").fadeIn(2000);
+		puzzle.draw_board();
 	// $("#wrong_modal").hide();
-}
+	}
 
+}
 var puzzle = new Puzzle();
 	
 

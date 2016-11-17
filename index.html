@@ -43,7 +43,7 @@
 
 
 			<div id="start_game">
-			<button class="btn btn-success" onclick="start_game()"> Start</button>
+			<button class="btn btn-success" onclick="puzzle.start_game()"> Start</button>
 			</div>
 		</div>
 
@@ -61,7 +61,7 @@
 		
 
 			
-				<button id="solve_button" onclick="$('#myModal').modal()">SOLVE PUZZLE</button>
+				<button id="solve_button" onclick="puzzle.display()">SOLVE PUZZLE</button>
 				<button id="spinner">Spin Wheel</button>
 				<button id="buy_vowel">Buy Vowel</button>
 				<button id="new_puzzle" onclick="puzzle.draw_board(phrase())">New Puzzle</button>
@@ -72,7 +72,7 @@
 			</div>
 
 			<div id="modal_container" class="container">
-			  <div class="modal fade" id="myModal" role="dialog">
+			  <div class="modal fade" id="solve_puzzle_Modal" role="dialog">
 			    <div class="modal-dialog modal-sm">
 			      <div class="modal-content">
 			        <div class="modal-header">
@@ -92,7 +92,6 @@
 			</div>
 
 			<div id="modal_wrong" class="container">
-			<!--<div id="modal_container" class="container">-->
 			  <div class="modal fade" id="wrong_modal" role="dialog">
 			    <div class="modal-dialog modal-sm">
 			      <div class="modal-content">
@@ -100,17 +99,24 @@
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
 			          <h4 class="modal-title">You're damn wrong!</h4>
 			        </div>
-			        <!-- <div class="modal-body">
-			          <input id="solve" type="text">
-			        </div> -->
-			        <!-- <div class="modal-footer">
-			        	<div id="solvetext"> </div>
-			          	<button type="button" class="btn btn-default" onclick="puzzle.solve()">Solve</button>
-			        </div> -->
 			      </div>
 			    </div>
 			  </div>
 			</div>
+
+			<div id="modal_right" class="container">
+			  <div class="modal fade" id="right_modal" role="dialog">
+			    <div class="modal-dialog modal-sm">
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <h4 class="modal-title">Congratuation! You're right!</h4>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
 			
 		</div>
 	</div>
