@@ -4,19 +4,17 @@ $(document).ready(function(){
 })
 
 
-
 function phrase(){
 	var phraselist=[
 	'ANGORA SWEATER',
-	'BEAUTIFUL GLASS VASE',
+	'GLASS VASE',
 	'BLUE JEANS',
-	'BRONZE TABLE LAMPS',
-	'CHRISTMAS WREATH',
-	'COMFORTABLE COUCH',
-	'COMFY LOAFERS',
-	'COMFY SOFA',
-	'CORDLESS PHONE',
-	'DECORATIVE AREA RUGS',
+	'TABLE LAMPS',
+	'COUCH',
+	'LOAFERS',
+	'SOFA',
+	'CELLPHONE',
+	'RUGS',
 	'DIMMER SWITCH',
 	'DOWN COMFORTER',
 	'ENGRAVED BATH SOAPS',
@@ -27,16 +25,13 @@ function phrase(){
 	'FLUFFY BATHROBE',
 	'FLUFFY PILLOWS',
 	'FOOTSTOOL',
-	'GARDENING GLOVES',
 	'GARDENING TOOLS',
 	'HOME THEATER SYSTEM',
-	'HORIZONTAL METAL SHED',
 	'HOT WATER HEATER',
 	'INCENSE BURNER',
 	'KITCHEN CABINETS',
 	'KITCHEN TABLE',
 	'LAWN SPRINKLER',
-	'MAHOGANY COFFEE TABLE',
 	'OUTDOOR RUGS',
 	'PORTABLE HEATER',
 	'STEAM MOP',
@@ -45,7 +40,7 @@ function phrase(){
 	'WOODEN BOOKSHELVES'
 	];//home stuff
 
-	var num=Math.floor((Math.random() * phraselist.length)+1);
+	var num=Math.floor((Math.random() * phraselist.length));
 	console.log(num);
 	return phraselist[num];
 }
@@ -53,15 +48,15 @@ function phrase(){
 function Puzzle(){
 	this.score=0;
 	this.phrase='';
-	this.char_found_times=0;
+	// this.char_found_times=0;
 	this.chars_searched=[];
 	// this.enoughpoint=false;
 
-	this.draw_board=function(phrase){
-		this.phrase=phrase.toUpperCase();
+	this.draw_board=function(){
+		// this.phrase=phrase.toUpperCase();
 		var tile='';
-		for (var i=0; i<phrase.length; i++){
-			if (phrase[i]===' '){
+		for (var i=0; i<this.phrase.length; i++){
+			if (this.phrase[i]===' '){
 				tile+= '<span id="tile'+i+'" class="space"><h2>&nbsp</h2></span>'
 			}
 
@@ -74,11 +69,11 @@ function Puzzle(){
 	}
 
 	this.search=function(){
+		if (this.chars_searched.length==5){
+			alert("time to solve puzzle");
+			$("#solve_puzzle_Modal").modal("show");
+		}
 		var char=($("#user_input").val()).toUpperCase();
-
-	// if ((char=='A'||char=='E'||char=='I'||char=='O'||char=='U')){
-	//   this.score=this.score-100;
-	// }
 
 		if (char!=='' && this.chars_searched.indexOf(char)== -1){
 			this.chars_searched.push(char);
@@ -111,19 +106,32 @@ function Puzzle(){
 					$("#tile"+i).replaceWith('<span id="tile'+i+'" class="tile"><h2>'+this.phrase[i]+'</h2></span>');
 				}
 			}
+			this.score=this.score+2000;
+			$("#score_board").html(this.score);
 			$("#solve_puzzle_Modal").modal("hide");
 			$("#right_modal").modal("show");
 			$("#letters_played").html("");
 			console.log("great");
+			// alert("new puzzle");
+			// this.new_puzzle();
 		}
 
 		else{
 			$("#solve_puzzle_Modal").modal("hide");
 			$("#wrong_modal").modal("show");
 			console.log("wrong");
+			// alert("new puzzle");
+			// this.new_puzzle();
 		}
 	}
 
+	this.new_puzzle=function(){
+		this.chars_searched=[];
+		this.phrase=phrase();
+		this.draw_board();
+		$("#rounds").html('');
+		$("#letters_played").html('');
+	}
 
 	this.display=function(){
 		$('#solve_puzzle_Modal').modal("show")
@@ -133,11 +141,14 @@ function Puzzle(){
 	this.start_game=function(){
 		$("#intro").fadeOut();
 		$("#game").fadeIn(2000);
-		puzzle.draw_board();
+		this.new_puzzle();
+		//setTimeout(puzzle.draw_board(),3000);
 		// $("#wrong_modal").hide();
 	}
-
 }
+
+
+
 var puzzle = new Puzzle();
 
 
