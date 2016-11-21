@@ -50,6 +50,7 @@
 }
 
 #tile_board{
+	word-wrap: break-word;
 	/*margin:20px 0px;*/
 	border: 1px solid red;
 	/*width: 100%;*/
@@ -83,6 +84,7 @@ body{
 	height:120px;
 	width: 80px;
 	/*background-color: rgb(234,234,234);*/
+	visibility: hidden;
 }
 .tile h2{
 	text-align: center;
