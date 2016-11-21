@@ -1,3 +1,12 @@
+body{
+  background: url('wof.bmp') no-repeat fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /*background-image: url('https://i.ytimg.com/vi/10fycXlDYSQ/maxresdefault.jpg');*/
+}
+
 #intro{
 	position: relative;
 	/*border: 1px solid blue;*/
@@ -34,30 +43,21 @@
     left:50%;
 }
 
-img {
-  width: 100%;
-}
+
 #game{
+
   /*background-image: url("wheel.png");*/
 
-  width: 1450px;
-  height: 600px;
+  width: 1520px;
+  height: 700px;
   margin: 200px auto;
-  background-color: #5FDFFF;
+  background-color: #FFFF9B;
 
   padding:40px;
   /*border: 1px solid red;*/
-
+  border-radius: 35px;
+text-align: center;
 }
-
-/*#game img{
-  width: 100%;
-}*/
-/*#wrapper{
-	width: 90%;
-	margin: 50px auto;
-}
-*/
 
 
 #button_controls{
@@ -65,26 +65,22 @@ img {
 }
 
 #tile_board{
-	word-wrap: break-word;
+	/*word-wrap: break-word;*/
 	/*margin:20px 0px;*/
 	/*border: 1px solid red;*/
 	/*width: 100%;*/
 	/*height:170px;*/
 	border-radius: 15px;
 }
-html { 
-  background: url(wheel.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-body{
-	/*background-color: gray;*/
-  /*background-image: url("wheel.png");*/
-  /*background-image: url("wheel.png");*/
+
+#user_input{
+  font-size: 24px;
+  height:40px;
 }
 
+#controller{
+  text-align: center;
+}
 .tile{
 	/*border: 1px solid red;*/
 	display:inline-block;
@@ -93,8 +89,8 @@ body{
 	/*background-image: url("http://placehold.it/100x150");*/
 	height:120px;
 	width: 80px;
-	background-color: rgb(234,234,234);
-  background-color: #1E7F00;
+	/*background-color: rgb(234,234,234);*/
+  background-color: #222093;
 	/*z-index: -1;*/
 	/*position:static;*/
 }
@@ -115,27 +111,11 @@ body{
 	margin: 0px;
 	padding: 0px;
 	font-size: 7em;
+  color: orange;
 	/*display: none;*/
 }
 
-#modal_container{
-	/*top:5%;*/
-	/*right:50%;*/
-	/*bottom: 100px;*/
-	/*outline: none;*/
 
-}
 
-/*#wrong_modal {
-	display: show;
-	margin-left: 100px;
-}*/
-
-/*.board{
-	border: 1px solid red;
-	height: 200px;
-	background-color: grey;
-
-}
 
 

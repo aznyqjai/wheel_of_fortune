@@ -17,7 +17,6 @@ function phrase(){
 	'RUGS',
 	'DIMMER SWITCH',
 	'DOWN COMFORTER',
-	'ENGRAVED BATH SOAPS',
 	'FABRIC SOFTENER',
 	'FAMILY PHOTOS',
 	'FINE CHINA',
@@ -26,7 +25,6 @@ function phrase(){
 	'FLUFFY PILLOWS',
 	'FOOTSTOOL',
 	'GARDENING TOOLS',
-	'HOME THEATER SYSTEM',
 	'HOT WATER HEATER',
 	'INCENSE BURNER',
 	'KITCHEN CABINETS',
@@ -37,7 +35,6 @@ function phrase(){
 	'STEAM MOP',
 	'PATIO LIGHTS',
 	'TOY TELEPHONE',
-	'WOODEN BOOKSHELVES'
 	];//home stuff
 
 	var num=Math.floor((Math.random() * phraselist.length));
