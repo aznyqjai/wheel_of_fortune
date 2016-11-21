@@ -53,7 +53,6 @@ function Puzzle(){
 	// this.enoughpoint=false;
 
 	this.draw_board=function(){
-		// this.phrase=phrase.toUpperCase();
 		var tile='';
 		for (var i=0; i<this.phrase.length; i++){
 			if (this.phrase[i]===' '){
@@ -82,7 +81,7 @@ function Puzzle(){
 			for (var i=0; i<this.phrase.length; i++){
 				if (char===this.phrase[i]){
 					$("#tile"+i).replaceWith('<span id="tile'+i+'" class="tile"><h2>'+char.toUpperCase()+'</h2></span>');
-					this.char_found_times+=1;
+					// this.char_found_times+=1;
 					this.score+=100;  
 				}
 			}
@@ -102,9 +101,9 @@ function Puzzle(){
 	this.solve=function(){
 		if (($("#solve").val().toUpperCase())==this.phrase){
 			for (var i=0; i<this.phrase.length; i++){
-				if (phrase[i]!==' '){
+				// if (phrase[i]!==' '){
 					$("#tile"+i).replaceWith('<span id="tile'+i+'" class="tile"><h2>'+this.phrase[i]+'</h2></span>');
-				}
+				// }
 			}
 			this.score=this.score+2000;
 			$("#score_board").html(this.score);
@@ -114,12 +113,14 @@ function Puzzle(){
 			console.log("great");
 			// alert("new puzzle");
 			// this.new_puzzle();
+			$("#solve").val('');
 		}
 
 		else{
 			$("#solve_puzzle_Modal").modal("hide");
 			$("#wrong_modal").modal("show");
 			console.log("wrong");
+			$("#solve").val('')
 			// alert("new puzzle");
 			// this.new_puzzle();
 		}
